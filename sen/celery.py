@@ -13,6 +13,6 @@ app.conf.broker_url = BASE_REDIS_URL
 # this allows you to schedule items in the Django admin.
 app.conf.beat_scheduler = 'django_celery_beat.schedulers.DatabaseScheduler'
 #inside paranthesis lambda: settings.INSTALLED_APPS
-# @app.task(bind=True)
-# def debug_task(self):
-#     print('Request: {0!r}'.format(self.request))
+@app.task(bind=True)
+def debug_task(self):
+    print('Request: {0!r}'.format(self.request))
