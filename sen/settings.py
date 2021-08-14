@@ -64,7 +64,7 @@ ROOT_URLCONF = 'sen.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,13 +82,22 @@ WSGI_APPLICATION = 'sen.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+#from django import 
+import pymongo
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE':pymongo ,
+#         'NAME':BASE_DIR/'mydb',
+#         } 
+#         #'ENGINE': 'django.db.backends.sqlite3',
+#         #'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+#     # 'default': {
+#     #     'ENGINE': '../senv/Lib/site-packages/site-package/pymongo',
+#     #     'NAME': 'myproject'         #BASE_DIR / 'db.sqlite3',
+#     # }
+
 
 
 # Password validation

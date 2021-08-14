@@ -22,6 +22,7 @@
 <form action="update" method="post" >
     {%csrf_token %}
     <div><h3>Enter the key here:   <input type="text" name='key' required></h3></div>
+    <div><h3>Enter the new post:   <input type="text" name='newpost' required placeholder="enter the new post you want tot add here"></h3></div>
     <div><input type="submit" id="cf" name='Submit to update' text="submit to update"></div>
 </form>
 </div>

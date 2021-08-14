@@ -4,8 +4,9 @@ from .threads import createdata, createdatatwo
 
 # Create your views here.
 def home(request):
-    return HttpResponse("HEY USERS!!")
+    return render(request, "index.html")
 
+#for checking threads in django
 def threadss(request):
     c=createdata()
     c.start()
@@ -15,4 +16,5 @@ def threadss(request):
     
 
 def addsen(request):
-    HttpResponse("Checking Error for sentry")
+    #sentry error -1: this function is for creating an error to check sentry
+    HttpResponse("Checking Error for sentry") 

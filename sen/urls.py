@@ -21,5 +21,8 @@ urlpatterns = [
     path("",include("pysen.urls")),
     path("addsen",include("pysen.urls")),
     path("threads", include('pysen.urls')),
-    path("additem",include('pysen.urls'))
+    path("additem",include('pysen.urls')),
+    path("update", include('pysen.urls')),
+    path("find", include('pysen.urls')),
+    path("deletepost", include('pysen.urls')),
 ]

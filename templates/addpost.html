@@ -21,8 +21,9 @@
 <div id="fooo">
 <form action="additem" method="post" >
     {%csrf_token %}
+    <div><h3>Enter your ID:     <input type="number" name='id' placeholder="Your id"></h3></div>
     <div><h3>Enter your First Name:   <input type="text" name='Firstname' placeholder="Your First Name" required></h3></div>
-    <div><h3>Enter your Post:     <input type="text" name='Lastname' placeholder="Your Post"></h3></div>
+    <div><h3>Enter your Post:     <input type="text" name='post' placeholder="Your Post"></h3></div>
     <div><input type="submit" id="cf" name='Submit to post' text="submit to post"></div>
 </form>
 </div>

@@ -17,9 +17,9 @@
 {%extends 'index.html'%}
 
 
-{%block cc%}
+{%block changepart%}
 <div id="fooo">
-<form action="register" method="post" >
+<form action="find" method="post" >
     {%csrf_token %}
     <div><h3>Enter the key here:   <input type="text" name='key' required></h3></div>
     <div><input type="submit" id="cf" name='Submit to find' text="submit to find"></div>
