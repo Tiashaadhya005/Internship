@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("pysen.urls")),
     path("addsen",include("pysen.urls")),
-    path("threads", include('pysen.urls'))
+    path("threads", include('pysen.urls')),
+    path("additem",include('pysen.urls'))
 ]
