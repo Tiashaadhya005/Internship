@@ -1,0 +1,28 @@
+<style>
+    #fooo{
+        flex:grid;
+        background-color: grey;
+        flex-wrap: container;
+        width:40%;
+        margin: 8em  10em 8em 20em;
+        padding: 2em 0rem 2em 10rem;
+    }
+    #cf{
+        padding:1em 1em 1em 1em;
+        background-color: aqua;
+        cursor: pointer;
+        margin-left: 10em;
+    }
+</style>
+{%extends 'index.html'%}
+
+
+{%block cc%}
+<div id="fooo">
+<form action="register" method="post" >
+    {%csrf_token %}
+    <div><h3>Enter the key here:   <input type="text" name='key' required></h3></div>
+    <div><input type="submit" id="cf" name='Submit to find' text="submit to find"></div>
+</form>
+</div>
+{% endblock %}
