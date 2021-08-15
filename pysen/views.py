@@ -8,13 +8,16 @@ def home(request):
 
 #for checking threads in django
 def threadss(request):
-    c=createdata()
-    c.start()
-    d=createdatatwo()
-    d.start()
-    return HttpResponse("It's threading page!")
+    firstthread=createdata() #creating an instance of the thread class
+    firstthread.start() #start the thread
+    secondthread=createdatatwo() #creating an instance of another thread class
+    secondthread.start() #start that thread
+    var=HttpResponse("It's threading page!") #will be executed in main thread
+    firstthread.join()
+    secondthread.join()
+    return var
     
 
 def addsen(request):
-    #sentry error -1: this function is for creating an error to check sentry
+    #sentry error 1: this function is for creating an error to check sentry
     HttpResponse("Checking Error for sentry") 
