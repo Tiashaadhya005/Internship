@@ -83,7 +83,6 @@ WSGI_APPLICATION = 'sen.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 #from django import 
-import pymongo
 
 # DATABASES = {
 #     'default': {

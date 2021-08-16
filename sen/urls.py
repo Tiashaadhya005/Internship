@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+#from sen import celapp
 from django.contrib import admin
 from django.urls import path,include
 
@@ -20,9 +21,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("pysen.urls")),
     path("addsen",include("pysen.urls")),
+    # path("celtask",include('celapp.urls')),
+    # path("cell",include('celapp.urls')),
     path("threads", include('pysen.urls')),
     path("additem",include('pysen.urls')),
     path("update", include('pysen.urls')),
     path("find", include('pysen.urls')),
     path("deletepost", include('pysen.urls')),
+    path('celtask', include('celapp.urls')),
+    # path('celli', include('celapp.urls')),
 ]
