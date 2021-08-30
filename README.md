@@ -1,6 +1,6 @@
 # Internship
 
-Project file name: sen
+Description: this project file includes implementations of custome model manager, sentry , celery, threads etc.
 
 base url: 127.0.0.1:8000
 
@@ -8,29 +8,8 @@ command: python3 manage.py runserver
 
 urls:
 
-"" - for homepage
+"admin/" - this url opens admin page . here we have to login into the admin page using userid and password . where Userid :abcd and password:abcd
 
-"admin/" - for admin page(username:abcd password:abcd)
-
-"addsen" - for Sentry implementation
-
-"threads" - for showing python threads
-
-"additem" - for insertion operation with pymongo
-
-"update" - for update operation with pymongo
-
-"find" - for read operation with pymongo
-
-"deletepost" - for delete operation with pymongo
-
-"celtask" - for celery operation
-
-In settings.py:
-
-1)Included all the apps name in the list INSTALLED_APPS. 
-
-2) Also included the details for implementing celery and sentry
 
 For celery:
 
@@ -55,3 +34,11 @@ Templates:
 4) modify.html: html file that takes the key as input whose data has to modify
 
 5) delete.html:html file that takes the key as input which has to delete from database
+
+6) index_reg_log.html: html file that gives the option for register/login(this is for the implementation of custom model manager)
+
+7) regisater.html: html file for the registration (this is for the implementation of custom model manager)
+
+8) login.html:html file for login (this is for the implementation of custom model manager)
+
+9) show.html: html file for showing all the data from database
