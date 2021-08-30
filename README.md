@@ -7,6 +7,7 @@ base url: 127.0.0.1:8000
 command: python3 manage.py runserver
 
 urls:
+
 "" - for homepage
 "admin/" - for admin page(username:abcd password:abcd)
 "addsen" - for Sentry implementation
