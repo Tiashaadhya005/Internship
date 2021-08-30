@@ -30,4 +30,8 @@ urlpatterns = [
     path("deletepost", include('pysen.urls')),
     path('celtask', include('celapp.urls')),
     # path('celli', include('celapp.urls')),
+    path('reglog',include('flr.urls')),
+    path('register',include('flr.urls')),
+    path('login',include('flr.urls')),
+    path('show',include('flr.urls')),
 ]
