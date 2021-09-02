@@ -3,7 +3,7 @@ from config import USERNAME,PASSWORD
 
 #client=MongoClient('localhost', 27017)
 #uri = "mongodb://127.0.0.1:27017"
-uri =f"mongodb://{USERNAME}:{PASSWORD}@0.0.0.0:27017"
+uri =f"mongodb://{USERNAME}:{PASSWORD}@localhost:27017"
 #client = MongoClient("mongodb://root:rootpassword@localhost:27017") 
 client= MongoClient(uri)
 mydb=client['myproject']
