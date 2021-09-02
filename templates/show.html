@@ -1,0 +1,9 @@
+
+{%extends 'index_reg_log.html'%}
+{%block cc%}
+{%for rec in person_all%}
+<li><h2>{{rec.Firstname }} {{rec.Lastname }}</h2>
+<h2>{{rec.Mobile_No }}</h2></li>
+{%endfor%}
+
+{%endblock%}
