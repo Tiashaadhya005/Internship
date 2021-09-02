@@ -11,7 +11,7 @@ from django.contrib import messages
 def index_for_reg_log(request):
     return render(request, "index_reg_log.html")
 
-
+#function to register
 def register(request):
     if request.method =='POST':
         Firstname=request.POST.get('Firstname','')
@@ -23,11 +23,11 @@ def register(request):
         u=User_lists(Username=Username, Password=password, Email=Email, Firstname=Firstname, Lastname=Lastname, Mobile_No=Mobile_No)
         u.save()
         #print('Saved!')
-        return redirect('/')
+        return redirect('/reglog')
     else:return render(request,"register.html")
 
 
-
+#function for login
 def login(request):
     if request.method=='POST':
         Username= request.POST.get("Username","")
@@ -35,7 +35,7 @@ def login(request):
         u=User_lists.checkss(Username,Password)
         if u==True :
             messages.info(request, 'Login Successful')
-            return redirect('/')
+            return redirect('/reglog')
         else:
             #return HttpResponse("invalid login")
             messages.info(request,"Invalid login")
@@ -43,6 +43,8 @@ def login(request):
 
     else:return render(request,"login.html")
 
+
+#function for showing the data from database
 def show(request):
     person_all=User_lists.get_queryset().order_by('Firstname')
     print(person_all)

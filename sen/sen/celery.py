@@ -2,9 +2,10 @@ from __future__ import absolute_import , unicode_literals
 import os
 from celery import Celery
 from django.conf import settings
+from . import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE','sen.settings')
-BASE_REDIS_URL = os.environ.get('REDIS_URL', 'redis://localhost:6379')
+BASE_REDIS_URL = os.environ.get('REDIS_URL', 'redis://redis:6379')
 app = Celery('sen')
 app.config_from_object('django.conf:settings', namespace='CELERY')
 app.autodiscover_tasks()

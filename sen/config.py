@@ -1,0 +1,2 @@
+USERNAME="checkingg"
+PASSWORD="checkingg"

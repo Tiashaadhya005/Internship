@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<style>
+    body{
+        background-color: aquamarine;
+        
+    }
+    #emni{
+        flex:content;
+        background-color: grey;
+        position: center;
+        width:70%;
+        height:  200%;
+        margin-left: 10%;
+        margin-top: 15%;
+        padding-left: 5em;
+        padding-bottom: 3rem;
+    }
+
+    
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Project-post page</title>
+</head>
+<body>
+    {% block changepart%}
+    <div id="emni">
+    <p>
+        <div> <h1> HEY USER!!! </h1></div>
+        <div>
+            <h3> it is the home page</h3>
+        </div>
+        <div>
+            <h3> You can add your post here <a href="/additem" >Add post</a></h3>
+        </div>
+        <div>
+            <h3> You can find your post here <a href="/find" >Find post</a></h3>
+        </div>
+        <div>
+            <h3> You can modify your post here <a href="/update" >Modify post</a></h3>
+        </div>
+        <div>
+            <h3> You can delete any post from here <a href="/deletepost" >Delete post</a></h3>
+        </div>
+    </p>
+    </div>
+    {% endblock %}
+</body>
+</html>

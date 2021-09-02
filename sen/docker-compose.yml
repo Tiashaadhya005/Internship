@@ -1,0 +1,48 @@
+services:
+  django: 
+    build: .
+    image: django:3.2.6
+    volumes:
+     - /sen
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000
+    links:
+      - mongo
+      - celery
+
+  mongo:
+    image: mongo:3.6.8
+    volumes: 
+      - mongo:/data/db
+    environment: 
+      - MONGO_INITDB_ROOT_USERNAME=checkingg
+      - MONGO_INITDB_ROOT_PASSWORD=checkingg
+    
+    ports:
+      - 27017:27017
+    #command: [--auth]
+
+  celery:
+      image: celery
+      volumes:
+        - /sen
+      command: "celery worker -A sen -l INFO"
+      #celery -A appcode worker --loglevel=info
+        # - redis://redis:6379
+      links: 
+      - redis
+
+  redis:
+    image: "redis:alpine"
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - '6379:6379'
+    command: redis-server
+
+volumes:
+  mongo:
+  # redis.conf:
+  #   /usr/local/etc/redis/redis.conf
+  #mongo:/data/db
