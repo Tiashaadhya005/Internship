@@ -16,33 +16,39 @@ services:
     volumes: 
       - mongo:/data/db
     environment: 
-      - MONGO_INITDB_ROOT_USERNAME=checkingg
-      - MONGO_INITDB_ROOT_PASSWORD=checkingg
-    
+      # - MONGO_INITDB_ROOT_USERNAME=checkingg
+      # - MONGO_INITDB_ROOT_PASSWORD=checkingg
+      - MONGO_INITDB_DATABASE=myproject
     ports:
       - 27017:27017
     #command: [--auth]
 
   celery:
-      image: celery
+      #image: celery
+      build: .
       volumes:
-        - /sen
-      command: "celery worker -A sen -l INFO"
+        - ".:/sen"
+      command: ["celery", "-A", "sen", "worker", "-l", "INFO"]
       #celery -A appcode worker --loglevel=info
         # - redis://redis:6379
+      environment: 
+        - CELERY_BROKER_URL=redis://redis:6379
+        - CELERY_RESULT_BACKEND=redis://redis:6379
       links: 
-      - redis
+        - redis
+      # ports:
+      #   - 5678:5678
 
   redis:
     image: "redis:alpine"
     volumes:
       - ./redis.conf:/usr/local/etc/redis/redis.conf
     ports:
-      - '6379:6379'
-    command: redis-server
+     - '6379:6379'
+    #command: redis-server
 
 volumes:
   mongo:
-  # redis.conf:
+  redis: {}
   #   /usr/local/etc/redis/redis.conf
   #mongo:/data/db
