@@ -44,7 +44,10 @@ now to execute the project --
 
 2)Then we have to install docker 
 
-3)Now we have to go to the selected folder and have to run the command `docker-compose build` to build the image of the project 
+3)Now we have to go to the selected folder and have to run the command 
+`docker
+docker-compose build` 
+to build the image of the project 
 
 4) Next we have to run `docker-compose up` to make the container and to start the docker server.
 
