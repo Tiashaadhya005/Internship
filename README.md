@@ -53,6 +53,7 @@ now to execute the project --
    
 6) Now we can check the operations in the browser. 
 
-7) At last to stop the docker we will run "docker-compose kill".
+7) At last to stop the docker we will run 
+    `docker-compose kill` .
 
 8) then again we can run "docker ps" to verify whether all the containers deleted or not.
