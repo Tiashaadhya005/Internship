@@ -2,9 +2,6 @@
 
 Description: this project file includes implementations of custome model manager, sentry , celery, threads etc.
 
-base url: 127.0.0.1:8000
-
-command: python3 manage.py runserver
 
 urls:
 
@@ -19,9 +16,6 @@ appname:celapp
 
 2) added 2 functions to check how celery works.
 
-command:celery -A sen worker --loglevel=info
-
-also we have to keep the redis server on for the celery task(command for redis server: redis-server)
 
 Templates:
 
@@ -42,3 +36,23 @@ Templates:
 8) login.html:html file for login (this is for the implementation of custom model manager)
 
 9) show.html: html file for showing all the data from database
+
+
+now to execute the project --
+
+1) first we need to pull this from git.
+
+2)Then we have to install docker 
+
+3)Now we have to go to the selected folder and have to run the command "docker-compose build" to build the image of the project 
+
+4) Next we have to run "docker-compose up" to make the container and to start the docker server.
+
+5) For checking the container we can run the command "docker ps". It will show all the containers that are running. 
+   Also we can check any container that was build and then exited by using "docker ps -a".
+   
+6) Now we can check the operations in the browser. 
+
+7) At last to stop the docker we will run "docker-compose kill".
+
+8) then again we can run "docker ps" to verify whether all the containers deleted or not.
