@@ -3,5 +3,5 @@ from .views import celli,celtask
 
 urlpatterns = [
     path('/celtask', celtask, name='celtask'),
-    #path('celli', celli, name='celli')
+    path('celli', celli, name='celli')
 ]
