@@ -85,19 +85,12 @@ WSGI_APPLICATION = 'sen.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 #from django import 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE':pymongo ,
-#         'NAME':BASE_DIR/'mydb',
-#         } 
-#         #'ENGINE': 'django.db.backends.sqlite3',
-#         #'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-#     # 'default': {
-#     #     'ENGINE': '../senv/Lib/site-packages/site-package/pymongo',
-#     #     'NAME': 'myproject'         #BASE_DIR / 'db.sqlite3',
-#     # }
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Password validation
@@ -155,27 +148,9 @@ sentry_sdk.init(
     # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True
 )
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_BROKER_URL = 'redis://redis:6379'
+CELERY_RESULT_BACKEND = 'redis://redis:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
-# CELERY_BROKER_URL= os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
-# CELERY_RESULT_BACKEND = os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
 
-# CELERY_RESULT_BACKEND = 'django-db'
-# #For the cache backend you can use:
-
-# CELERY_RESULT_BACKEND = 'django-cache'
-# #We can also use the cache defined in the CACHES setting in django.
-
-# # celery setting.
-# CELERY_CACHE_BACKEND = 'default'
-
-# # django setting.
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-#         'LOCATION': 'my_cache_table',
-#     }
-# }
