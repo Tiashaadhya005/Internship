@@ -59,3 +59,6 @@ to build the image of the project
     `docker-compose kill` .
 
 8) then again we can run `docker ps` to verify whether all the containers deleted or not.
+
+
+ref: created another project using serializer , django form and pymongo (link- https://github.com/Tiashaadhya005/webdev_django_project)
